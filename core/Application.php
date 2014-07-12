@@ -91,17 +91,42 @@ abstract class Application
 
     public function run()
     {
-        $params = $this->router->resolve($this->request->getPathInfo());
-        if ($params === false) {
-            throw new HttpNotFoundException('No route found for ' . $this->request->getPathInfo());
+        try {
+            $params = $this->router->resolve($this->request->getPathInfo());
+            if ($params === false) {
+                throw new HttpNotFoundException('No route found for ' . $this->request->getPathInfo());
+            }
+
+            $controller = $params['controller'];
+            $action = $params['action'];
+
+            $this->runAction($controller, $action, $params);
+        } catch (HttpNotFoundException $e) {
+            $this->render404Page($e);
         }
 
-        $controller = $params['controller'];
-        $action = $params['action'];
-
-        $this->runAction($controller, $action, $params);
-
         $this->response->send();
+    }
+
+    protected function render404Page($e)
+    {
+        $this->response->setStatusCode('404', 'Not Found');
+        $message = $this->isDebugMode() ? $e->getMessage() : 'Page not found.';
+        $message = htmlspecialchars($message, ENT_QUOTES, 'UTF-8');
+
+        $this->response->setContent(<<<EOF
+<!doctype html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>404</title>
+</head>
+<body>
+{$massage}
+</body>
+</html>
+EOF
+        );
     }
 
     public function runAction($controller_name, $action, $params = array())
