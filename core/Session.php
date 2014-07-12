@@ -7,7 +7,7 @@ class Session
 
     public function __construct()
     {
-        if (! self::sessionStarted) {
+        if (! self::$sessionStarted) {
             session_start();
 
             self::$sessionStarted = true;

@@ -126,7 +126,7 @@ abstract class Application
 <title>404</title>
 </head>
 <body>
-{$massage}
+{$message}
 </body>
 </html>
 EOF

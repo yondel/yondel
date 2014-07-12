@@ -3,5 +3,5 @@
 require '../bootstrap.php';
 require '../YondelApplication.php';
 
-$app = new YondelApplication(false);
+$app = new YondelApplication(true);
 $app->run();
