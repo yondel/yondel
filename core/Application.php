@@ -150,7 +150,7 @@ EOF
     protected function findController($controller_class)
     {
         if (! class_exists($controller_class)) {
-            $controller_file = $this->getControllerDir() . '/' . $controller_class . 'php';
+            $controller_file = $this->getControllerDir() . '/' . $controller_class . '.php';
             if (! is_readable($controller_file)) {
                 return false;
             } else {
