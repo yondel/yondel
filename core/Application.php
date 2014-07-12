@@ -69,7 +69,7 @@ abstract class Application
         return $this->db_manager;
     }
 
-    public function getControlleDir()
+    public function getControllerDir()
     {
         return $this->getRootDir() . '/controllers';
     }
@@ -87,5 +87,52 @@ abstract class Application
     public function getWebDir()
     {
         return $this->getRootDir() . '/web';
+    }
+
+    public function run()
+    {
+        $params = $this->router->resolve($this->request->getPathInfo());
+        if ($params === false) {
+            // todo-A
+        }
+
+        $controller = $params['controller'];
+        $action = $params['action'];
+
+        $this->runAction($controller, $action, $params);
+
+        $this->response->send();
+    }
+
+    public function runAction($controller_name, $action, $params = array())
+    {
+        $controller_class = ucfirst($controller_name) . 'Controller';
+
+        $controller = $this->findController($controller_class);
+        if ($controller === false) {
+            // todo-B
+        }
+
+        $content = $controller->run($action, $params);
+
+        $this->response->setContent($content);
+    }
+
+    protected function findController($controller_class)
+    {
+        if (! class_exists($controller_class)) {
+            $controller_file = $this->getControllerDir() . '/' . $controller_class . 'php';
+            if (! is_readable($controller_file)) {
+                return false;
+            } else {
+                require_once $controller_file;
+
+                if (! class_exists($controller_class)) {
+                    return false;
+                }
+            }
+        }
+
+        return new $controller_class($this);
     }
 }
