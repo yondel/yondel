@@ -1,6 +1,6 @@
 <?php
 
 echo 'hello world';
-echo '\n';
+echo "\n";
 echo 'hello japan';
 
