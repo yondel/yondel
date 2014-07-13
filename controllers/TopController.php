@@ -6,8 +6,10 @@ class TopController extends Controller
         /*
          * render($variables = array(), $template = null, $layout = 'layout')
          */
+        $amazonApi = new AmazonApiModel();
+        $data = $amazonApi->getData();
         $variables = array(
-            'hoge' => 'hogehoge',
+            'amazonData' => $data,
         );
         return $this->render($variables);
     }

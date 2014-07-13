@@ -1,2 +1,10 @@
 <h2>ほおおおおおおおおおおお</h2>
-<h3><?php echo $hoge; ?></h3>
+<ul>
+<?php
+foreach ($amazonData['Items']['Item'] as $data) {
+?>
+    <li><?php echo $data['ItemAttributes']['Title']; ?></li>
+<?php
+}
+?>
+</ul>
