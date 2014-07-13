@@ -19,7 +19,7 @@ class View
 
     public function render($_path, $_variables = array(), $_layout = false)
     {
-        $_file = $this->base_dir . '/' . $_path . '.php';
+        $_file = $this->base_dir . '/' . $_path . '.tmpl';
 
         extract(array_merge($this->defaults, $_variables));
 
