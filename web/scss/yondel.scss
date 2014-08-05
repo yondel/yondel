@@ -1,3 +1,71 @@
-h2 {
-    color: red;
+@charset "UTF-8";
+
+* {
+    margin: 0;
+    padding: 0;
+    font-family: Helvetica-neue;
+}
+
+html {
+    min-height: 100%;
+    background: url(dog_640x960.png) no-repeat center;
+    background-size: cover;
+    font-size: 62.5%;
+}
+
+body {
+    font-size: 1.0rem;
+}
+
+
+p {
+    padding: 0;
+    margin: 0;
+}
+
+.header {
+    background-color: #fff;
+    margin-bottom: 100px;
+}
+
+h1 {
+    font-size: 3.0rem;
+    text-align: center;
+}
+
+.registerArea {
+    margin: 0 auto 50px auto;
+    width: 250px;
+    p {
+        color: #fff;
+        font-size: 1.5rem;
+        margin-bottom: 10px;
+    }
+    input {
+        display: block;
+        width: 100%;
+        font-size: 3.0rem;
+        border: none;
+        padding: 0;
+        &[type="text"] {
+            margin-bottom: 20px;
+            background: rgba(255, 255, 255, .8);
+        }
+    }
+}
+
+.cameraButton {
+    background: #fff;
+    position: relative;
+    input {
+        opacity: 0;
+        position: absolute;
+        top: 0;
+        left: 0;
+    }
+    p {
+        color: #000;
+        font-size: 3.0rem;
+        text-align: center;
+    }
 }
