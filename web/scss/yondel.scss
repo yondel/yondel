@@ -67,3 +67,17 @@ h1 {
         text-align: center;
     }
 }
+
+.itemWrapper {
+	background: rgba(255, 255, 255, .8);
+	postion: relative;
+	height: 240px;
+	.bookImage {
+		postion: absolute;
+		margin: 30px 30px 0 auto;
+	}
+	.bookInfo {
+	}
+	.btnArea {
+	}
+}
