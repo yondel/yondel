@@ -12,7 +12,8 @@ class YondelApplication extends Application
     protected function registerRoutes()
     {
         return array(
-            '/' => array('controller' => 'top', 'action' => 'top'),
+            '/'         => array('controller' => 'top', 'action' => 'top'),
+            '/register' => array('controller' => 'register', 'action' => 'register'),
         );
     }
 
