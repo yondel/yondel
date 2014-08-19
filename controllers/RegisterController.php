@@ -3,6 +3,12 @@
 class RegisterController extends Controller
 {
     public function registerAction() {
-        return $this->render();
+        $variables = array(
+            'title' => 'register',
+        );
+        /*
+         * render($variables = array(), $template = null, $layout = 'layout')
+         */
+        return $this->render($variables);
     }
 }

@@ -14,7 +14,7 @@ class View
 
     public function setLayoutVar($name, $value)
     {
-        $this->layout_variablesp[$name] = $value;
+        $this->layout_variables[$name] = $value;
     }
 
     public function render($_path, $_variables = array(), $_layout = false)
