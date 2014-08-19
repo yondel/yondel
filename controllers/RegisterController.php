@@ -4,7 +4,7 @@ class RegisterController extends Controller
 {
     public function registerAction() {
         $variables = array(
-            'title' => 'register',
+            'test' => 'fooooooooo',
         );
         /*
          * render($variables = array(), $template = null, $layout = 'layout')
