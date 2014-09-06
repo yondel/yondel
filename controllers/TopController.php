@@ -11,7 +11,7 @@ class TopController extends Controller
 //        $variables = array(
 //            'amazonData' => $data,
 //        );
-        $userName = $this->request->getPost("userName");
+        $userName = $this->request->getPost('userName');
         $variables = array(
             "userName" => $userName,
         );
