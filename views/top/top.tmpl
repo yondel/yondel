@@ -1,6 +1,32 @@
-<div class="registerArea">
-<form method="POST" action="">
-<input type="text" placeholder="Your Name">
-<input type="submit" value="Register">
-</form>
-</div>
+<?php $userName = ""; ?>
+
+<?php
+if ($userName === "") {
+?>
+    <div class="registerArea">
+    <form method="POST" action="">
+    <input type="text" placeholder="Your Name">
+    <input type="submit" value="Register">
+    </form>
+    </div>
+<?php
+} else {
+?>
+    <div class="bookList">
+    <p><?php echo $userName; ?>の本棚</p>
+    <ul>
+    <li>ああああああああああ</li>
+    <li>ああああああああああ</li>
+    <li>ああああああああああ</li>
+    <li>ああああああああああ</li>
+    <li>ああああああああああ</li>
+    </ul>
+    </div>
+<?php
+}
+?>
+<style>
+.bookList {
+    background: #fff;
+}
+</style>
