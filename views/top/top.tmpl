@@ -1,12 +1,10 @@
-<?php $userName = ""; ?>
-
 <?php
-if ($userName === "") {
+if ($userName === null) {
 ?>
     <div class="registerArea">
     <form method="POST" action="">
-    <input type="text" placeholder="Your Name">
-    <input type="submit" value="Register">
+    <input id="userName" name="userName" type="text" placeholder="Your Name" value="">
+    <input id="rgstUserName" type="submit" value="Register">
     </form>
     </div>
 <?php

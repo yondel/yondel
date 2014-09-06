@@ -11,6 +11,10 @@ class TopController extends Controller
 //        $variables = array(
 //            'amazonData' => $data,
 //        );
-        return $this->render();
+        $userName = $this->request->getPost("userName");
+        $variables = array(
+            "userName" => $userName,
+        );
+        return $this->render($variables);
     }
 }
