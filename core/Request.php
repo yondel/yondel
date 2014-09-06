@@ -64,7 +64,7 @@ class Request
             return rtrim(dirname($script_name), '/');
         }
 
-        return;
+        return '';
     }
 
     public function getPathInfo()
