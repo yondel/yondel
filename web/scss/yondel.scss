@@ -76,22 +76,68 @@ h1 {
 .itemWrapper {
 	background: rgba(255, 255, 255, .8);
 	padding: 10px;
-	margin: 20px 0 0 0;
+	margin: 20px 0 10px 0;
 	.contentsWrapper {
 		display: -webkit-box;
-	}
-	.bookImage {
-		vertical-align: middle;
-		-webkit-box-flex: 0;
-		width: 150px;
-		margin: 0 20px 0 0;
-	}
-	dl.bookInfo {
-		-webkit-box-flex: 1;
-		height: 150px;
-		dt.bookTitle {
-			font-size: 2.0em;
-			font-weight: bold;
+		.bookImage {
+			vertical-align: middle;
+			-webkit-box-flex: 0;
+			width: 150px;
+			margin: 0 20px 0 0;
+		}
+		dl.bookInfo {
+			-webkit-box-flex: 1;
+			height: 150px;
+			margin: 0 20px 0 0;
+			dt.bookTitle {
+				font-size: 2.0em;
+				font-weight: bold;
+			}
+			.graph {
+    				position: relative; /* IE is dumb */
+    				width: 300px;
+    				border: 1px solid #207870;
+    				padding: 2px;
+				.bar {
+    					display: block;
+    					position: relative;
+    					background: #409890;
+    					text-align: center;
+    					color: #f0ffff;
+    					height: 2em;
+    					line-height: 2em;
+				}
+				.bar span {
+					position: absolute;
+					left: 1em;
+				}
+			}
+		}
+		.btn {
+			-webkit-box-flex: 0;
+			vertical-align: middle;
+			width: 100px;
+			height: 100px;
+			border-radius: 50px;
+			-moz-border-radius: 50px;
+			-webkit-border-radius: 50px;
+			background-color: #409890;
+			.cross {
+				height: 80px;
+				margin: 10px 0px 0px 40px;
+				width: 20px;/*その要素自身の幅を、高さの1/4に指定。*/
+				position: relative;
+				background: #f0ffff;
+			}
+			.cross::before {
+				content: "";    /*before疑似要素のcontent*/
+				display: block;    /*ブロック化*/
+				width: 100%;    /*幅と高さを100%に*/
+				height: 100%;    /*90度回転。回転の基準点はデフォルトで中心なので指定しない*/
+				-moz-transform: rotate(90deg);
+				-webkit-transform: rotate(90deg);    /*色を変えたのはサンプルとしての分かり易さのため*/
+				background: #f0ffff;
+			}
 		}
 	}
 }
