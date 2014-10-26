@@ -26,6 +26,10 @@ a {
 	color: #000;
 }
 
+ul {
+	list-style-type: none;
+}
+
 header {
     background-color: #fff;
     margin-bottom: 100px;
@@ -79,15 +83,17 @@ h1 {
 	margin: 20px 0 10px 0;
 	.contentsWrapper {
 		display: -webkit-box;
+		-webkit-box-align: center;
 		.bookImage {
-			vertical-align: middle;
 			-webkit-box-flex: 0;
 			width: 150px;
 			margin: 0 20px 0 0;
+			img {
+				vertical-align: bottom;
+			}
 		}
 		dl.bookInfo {
 			-webkit-box-flex: 1;
-			height: 150px;
 			margin: 0 20px 0 0;
 			dt.bookTitle {
 				font-size: 2.0em;
@@ -116,16 +122,17 @@ h1 {
 		.btn {
 			-webkit-box-flex: 0;
 			vertical-align: middle;
-			width: 100px;
-			height: 100px;
-			border-radius: 50px;
-			-moz-border-radius: 50px;
-			-webkit-border-radius: 50px;
+			width: 50px;
+			height: 50px;
+			border-radius: 25px;
+			-moz-border-radius: 25px;
+			-webkit-border-radius: 25px;
 			background-color: #409890;
+			display: block;
 			.cross {
-				height: 80px;
-				margin: 10px 0px 0px 40px;
-				width: 20px;/*その要素自身の幅を、高さの1/4に指定。*/
+				height: 40px;
+				margin: 5px 0px 0px 20px;
+				width: 10px;/*その要素自身の幅を、高さの1/4に指定。*/
 				position: relative;
 				background: #f0ffff;
 			}
