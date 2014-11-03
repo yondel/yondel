@@ -148,3 +148,15 @@ h1 {
 		}
 	}
 }
+.bookShelf {
+	ul.bookLine{
+		padding: 10px;
+		li.itemArea {
+			float: left;
+
+			background: rgba(255, 255, 255, .8);
+			padding: 10px;
+			margin: 20px 0 10px 0;
+		}
+	}
+}
