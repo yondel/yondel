@@ -5,7 +5,9 @@ class AccountController extends Controller
     public function signupAction()
     {
         return $this->render(array(
-            '_token' => $this->generateCsrfToken('account/signup'),
+            'user_name' => '',
+            'password'  => '',
+            '_token'    => $this->generateCsrfToken('account/signup'),
         ));
     }
 
@@ -53,5 +55,12 @@ class AccountController extends Controller
             'errors'      => $errors,
             '_token'      => $this->generateCsrfToken('account/signup'),
         ), 'signup');
+    }
+
+    public function indexAction()
+    {
+        $user = $this->session->get('mailaddress');
+
+        return $this->render(array('mailaddress' => $mailaddress));
     }
 }
