@@ -1,0 +1,11 @@
+<?php $this->setLayoutVar('title', 'ホーム'); ?>
+
+<h2>ホーム</h2>
+
+<div id="statuses">
+<?php
+foreach ($statuses as $status) {
+    echo $this->render('status/status', array('status' => $status));
+}
+?>
+</div><!-- /#statuses -->

@@ -1,0 +1,11 @@
+<?php $this->setLayoutVar('title', $user['mailaddress']) ?>
+
+<h2><?php echo $this->escape($user['mailaddress']); ?></h2>
+
+<div>
+<?php
+foreach($statuses as $status) {
+    echo $this->render('status/status', array('status' => $status));
+}
+?>
+</div>
