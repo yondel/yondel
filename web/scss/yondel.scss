@@ -22,12 +22,12 @@ p {
 }
 
 a {
-	text-decoration: none;
-	color: #000;
+    text-decoration: none;
+    color: #000;
 }
 
 ul {
-	list-style-type: none;
+    list-style-type: none;
 }
 
 header {
@@ -43,8 +43,8 @@ h1 {
 .registerArea {
     margin: 0 auto 50px auto;
     width: 300px;
-	border: 3px dotted #CCC;
-	padding: 10px 10px;
+    border: 3px dotted #CCC;
+    padding: 10px 10px;
     p {
         color: #fff;
         font-size: 1.5rem;
@@ -61,16 +61,16 @@ h1 {
             background: rgba(255, 255, 255, .8);
         }
         &[type="submit"], &[type="file"] {
-			background: -moz-linear-gradient(top,#0099CC 0%,#006699);
-			background: -webkit-gradient(linear, left top, left bottom, from(#0099CC), to(#006699));
-			color:#FFF;
-    	}
+            background: -moz-linear-gradient(top,#0099CC 0%,#006699);
+            background: -webkit-gradient(linear, left top, left bottom, from(#0099CC), to(#006699));
+            color:#FFF;
+        }
     }
 }
 
 .cameraButton {
-	background: -moz-linear-gradient(top,#0099CC 0%,#006699);
-	background: -webkit-gradient(linear, left top, left bottom, from(#0099CC), to(#006699));
+    background: -moz-linear-gradient(top,#0099CC 0%,#006699);
+    background: -webkit-gradient(linear, left top, left bottom, from(#0099CC), to(#006699));
     position: relative;
     input {
         opacity: 0;
@@ -86,91 +86,91 @@ h1 {
 }
 
 .itemWrapper {
-	background: rgba(255, 255, 255, .8);
-	padding: 10px;
-	margin: 20px 0 10px 0;
-	.contentsWrapper {
-		display: -webkit-box;
-		-webkit-box-align: center;
-		.bookImage {
-			-webkit-box-flex: 0;
-			width: 150px;
-			margin: 0 20px 0 0;
-			img {
-				vertical-align: bottom;
-			}
-		}
-		dl.bookInfo {
-			-webkit-box-flex: 1;
-			margin: 0 20px 0 0;
-			dt.bookTitle {
-				font-size: 2.0em;
-				font-weight: bold;
-			}
-			.graph {
-				position: relative; /* IE is dumb */
-				width: 300px;
-				border: 1px solid #0099CC;
-				padding: 2px;
-				.bar {
-					display: block;
-					position: relative;
-					background: -moz-linear-gradient(top,#0099CC 0%,#006699);
-					background: -webkit-gradient(linear, left top, left bottom, from(#0099CC), to(#006699));
-					text-align: center;
-					color: #f0ffff;
-					height: 2em;
-					line-height: 2em;
-				}
-				.bar span {
-					position: absolute;
-					left: 1em;
-				}
-			}
-		}
-		.btn {
-			-webkit-box-flex: 0;
-			vertical-align: middle;
-			width: 50px;
-			height: 50px;
-			border-radius: 25px;
-			-moz-border-radius: 25px;
-			-webkit-border-radius: 25px;
-			background: -moz-linear-gradient(top,#0099CC 0%,#006699);
-			background: -webkit-gradient(linear, left top, left bottom, from(#0099CC), to(#006699));
-			display: block;
-			.cross {
-				height: 40px;
-				margin: 5px 0px 0px 20px;
-				width: 10px;/*その要素自身の幅を、高さの1/4に指定。*/
-				position: relative;
-				background: #f0ffff;
-			}
-			.cross::before {
-				content: "";    /*before疑似要素のcontent*/
-				display: block;    /*ブロック化*/
-				width: 100%;    /*幅と高さを100%に*/
-				height: 100%;    /*90度回転。回転の基準点はデフォルトで中心なので指定しない*/
-				-moz-transform: rotate(90deg);
-				-webkit-transform: rotate(90deg);    /*色を変えたのはサンプルとしての分かり易さのため*/
-				background: #f0ffff;
-			}
-		}
-	}
+    background: rgba(255, 255, 255, .8);
+    padding: 10px;
+    margin: 20px 0 10px 0;
+    .contentsWrapper {
+        display: -webkit-box;
+        -webkit-box-align: center;
+        .bookImage {
+            -webkit-box-flex: 0;
+            width: 150px;
+            margin: 0 20px 0 0;
+            img {
+                vertical-align: bottom;
+            }
+        }
+        dl.bookInfo {
+            -webkit-box-flex: 1;
+            margin: 0 20px 0 0;
+            dt.bookTitle {
+                font-size: 2.0em;
+                font-weight: bold;
+            }
+            .graph {
+                position: relative; /* IE is dumb */
+                width: 300px;
+                border: 1px solid #0099CC;
+                padding: 2px;
+                .bar {
+                    display: block;
+                    position: relative;
+                    background: -moz-linear-gradient(top,#0099CC 0%,#006699);
+                    background: -webkit-gradient(linear, left top, left bottom, from(#0099CC), to(#006699));
+                    text-align: center;
+                    color: #f0ffff;
+                    height: 2em;
+                    line-height: 2em;
+                }
+                .bar span {
+                    position: absolute;
+                    left: 1em;
+                }
+            }
+        }
+        .btn {
+            -webkit-box-flex: 0;
+            vertical-align: middle;
+            width: 50px;
+            height: 50px;
+            border-radius: 25px;
+            -moz-border-radius: 25px;
+            -webkit-border-radius: 25px;
+            background: -moz-linear-gradient(top,#0099CC 0%,#006699);
+            background: -webkit-gradient(linear, left top, left bottom, from(#0099CC), to(#006699));
+            display: block;
+            .cross {
+                height: 40px;
+                margin: 5px 0px 0px 20px;
+                width: 10px;/*その要素自身の幅を、高さの1/4に指定。*/
+                position: relative;
+                background: #f0ffff;
+            }
+            .cross::before {
+                content: "";    /*before疑似要素のcontent*/
+                display: block;    /*ブロック化*/
+                width: 100%;    /*幅と高さを100%に*/
+                height: 100%;    /*90度回転。回転の基準点はデフォルトで中心なので指定しない*/
+                -moz-transform: rotate(90deg);
+                -webkit-transform: rotate(90deg);    /*色を変えたのはサンプルとしての分かり易さのため*/
+                background: #f0ffff;
+            }
+        }
+    }
 }
 .bookShelf {
-	ul.bookLine{
-		padding: 0px 0px 0px 30px;
-		li.itemArea {
-			background: rgba(255, 255, 255, .8);
-			padding: 10px;
-			float: left;
-			position: relative;
-			.badge {
-				position: absolute;
-				top: 21px;
-				left: 21px;
-			}
-		}
-	}
+    ul.bookLine{
+        padding: 0px 0px 0px 30px;
+        li.itemArea {
+            background: rgba(255, 255, 255, .8);
+            padding: 10px;
+            float: left;
+            position: relative;
+            .badge {
+                position: absolute;
+                top: 21px;
+                left: 21px;
+            }
+        }
+    }
 }
