@@ -6,20 +6,13 @@
 <input type="hidden" name="_token" value="<?php echo $this->escape($_token) ?>">
 <?php
 if (isset($errors) && count($errors) > 0) {
-?>
-    <ul class="error_list">
-<?php
-        foreach ($errors as $error) {
-?>
-            <li><?php echo $this->escape($error); ?></li>
-<?php
-        }
-?>
-    </ul>
-<?php
+    echo $this->render('errors', array('errors' => $errors));
 }
+
+echo $this->render('account/inputs', array(
+    'mailaddress' => $mailaddress,
+    'password' => $password,
+));
 ?>
-<input type="email" name="mailaddress" value="" placeholder="メールアドレス">
-<input type="password" name="password" value="" placeholder="パスワード">
 <p><input type="submit" value="登録"></p>
 </form>

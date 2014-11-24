@@ -5,7 +5,7 @@ class AccountController extends Controller
     public function signupAction()
     {
         return $this->render(array(
-            'user_name' => '',
+            'mailaddress' => '',
             'password'  => '',
             '_token'    => $this->generateCsrfToken('account/signup'),
         ));
@@ -59,8 +59,79 @@ class AccountController extends Controller
 
     public function indexAction()
     {
-        $user = $this->session->get('mailaddress');
+        $user = $this->session->get('user');
 
-        return $this->render(array('mailaddress' => $mailaddress));
+        return $this->render(array('user' => $user));
+    }
+
+    public function signinAction()
+    {
+        if ($this->session->isAuthenticated()) {
+            return $this->redirect('/account');
+        }
+
+        return $this->render(array(
+            'mailaddress' => '',
+            'password' => '',
+            '_token' => $this->generateCsrfToken('account/signin'),
+        ));
+    }
+
+    public function authenticateAction()
+    {
+        if ($this->session->isAuthenticated()) {
+            return $this->redirect('/account');
+        }
+
+        if (! $this->request->isPost()) {
+            $this->forward404();
+        }
+
+        $token = $this->request->getPost('_token');
+        if (! $this->checkCsrfToken('account/signin', $token)) {
+            return $this->redirect('/account/signin');
+        }
+
+        $mailaddress = $this->request->getPost('mailaddress');
+        $password = $this->request->getPost('password');
+
+        $errors = array();
+
+        if (! strlen($mailaddress)) {
+            $errors[] = 'ユーザIDを入力してください';
+        }
+
+        if (! strlen($password)) {
+            $errors[] = 'パスワードを入力してください';
+        }
+
+        if (count($errors) === 0) {
+            $user_repository = $this->db_manager->get('User');
+            $user = $user_repository->fetchByUserName($mailaddress);
+
+            if (! $user || ($user['password'] !== $user_repository->hashPassword($password))) {
+                $errors[] = 'ユーザIDかパスワードが不正です';
+            } else {
+                $this->session->setAuthenticated(true);
+                $this->session->set('user', $user);
+
+                return $this->redirect('/');
+            }
+        }
+
+        return $this->render(array(
+            'mailaddress' => $mailaddress,
+            'password'    => $password,
+            'errors'      => $errors,
+            '_token'      => $this->generateCsrfToken('account/signin'),
+        ), 'signin');
+    }
+
+    public function signoutAction()
+    {
+        $this->session->clear();
+        $this->session->setAuthenticated(false);
+
+        return $this->redirect('/account/signin');
     }
 }
