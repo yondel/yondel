@@ -174,3 +174,40 @@ h1 {
         }
     }
 }
+
+.overlay {
+    text-align: center;
+    .box {
+        width: 400px;
+        height: 150px;
+        border-radius: 15px;
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        margin-left: -200px;
+        margin-top: -100px;
+        z-index: 100;
+        background: rgba(0, 0, 0,0.7);
+        p {
+            text-align: left;
+            color: #fff;
+            font-size: 1.5rem;
+            margin-top: 20px;
+            margin-left: 20px;
+            margin-bottom: 10px;
+        }
+        input {
+            display: block;
+            width: 80%;
+            font-size: 3.0rem;
+            border: none;
+            padding: 0;
+            margin-top: 20px;
+            margin-left: 20px;
+            &[type="numbers"] {
+                margin-bottom: 20px;
+                background: rgba(255, 255, 255, .8);
+            }
+        }
+    }
+}
