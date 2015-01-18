@@ -18,6 +18,8 @@ class YondelApplication extends Application
             '/account'                      => array('controller' => 'account', 'action' => 'index'),
             '/account/:action'              => array('controller' => 'account'),
             '/register'                     => array('controller' => 'register', 'action' => 'register'),
+            '/add'                          => array('controller' => 'add', 'action' => 'index'),
+            '/completed'                    => array('controller' => 'completed', 'action' => 'index'),
         );
     }
 
