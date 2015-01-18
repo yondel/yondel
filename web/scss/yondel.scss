@@ -56,7 +56,9 @@ h1 {
         font-size: 3.0rem;
         border: none;
         padding: 0;
-        &[type="text"] {
+        &[type="text"],
+        &[type="email"],
+        &[type="password"] {
             margin-bottom: 20px;
             background: rgba(255, 255, 255, .8);
         }
@@ -95,10 +97,9 @@ h1 {
         .bookImage {
             -webkit-box-flex: 0;
             width: 150px;
+            height: 150px;
             margin: 0 20px 0 0;
-            img {
-                vertical-align: bottom;
-            }
+            background-size: cover;
         }
         dl.bookInfo {
             -webkit-box-flex: 1;
